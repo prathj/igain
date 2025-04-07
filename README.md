@@ -1,8 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# iGain
+## AI Chatbot to help users find lost packages
 
-## Getting Started
+### System requirements:
+Python3 installed
 
-First, run the development server:
+### Deployment:
+To deploy locally, you need an OpenAI API key with credits loaded. Create a .env file in the project's root directory, and then create this variable, replacing api_key with your own:
+
+OPENAI_API_KEY="api_key"
+
+Then, start the backend FastAPI server by traversing to the api folder and the running the app.py file.
+
+```bash
+cd api
+
+python3 app.py
+```
+
+Then, cd to chatbotv2, and run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +31,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Vercel link:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Approach taken:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The web app that houses the chatbot is built on the Next.JS framework for seamless development and deployment. The chatbot functionality is built using Python, and FastAPI to create a microservice in the backend that can be accessed by Next.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The chatbot uses the OpenAI API to access its GPT model, which it uses to determine which course of action or branch that the chatbot should go with depending on the user's input. This can account for edge cases and nuance in the user's text.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Bot in Action

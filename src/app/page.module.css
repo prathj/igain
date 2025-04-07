@@ -260,3 +260,277 @@ a.secondary {
   text-align: center;
   padding: 16px;
 }
+
+/* Main Content Styles */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Chatbot Icon */
+.chatbotIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.chatbotIcon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.chatbotIcon svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Chatbot Popup */
+.chatbotPopup {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chatbotPopup.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.chatbotHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.chatbotHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+/* Update existing chatbot container styles */
+.chatbotContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  height: 100%;
+  overflow: hidden;
+}
+
+.chatHistory {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loadingText {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.chatMessage {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #e9e9eb;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.chatForm {
+  display: flex;
+  padding: 12px;
+  background-color: white;
+  border-top: 1px solid #e6e6e6;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chatInput:focus {
+  border-color: #007bff;
+}
+
+.sendButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sendButton:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  padding: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .chatbotPopup {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .chatbotHeader {
+    border-radius: 0;
+  }
+
+  .chatbotIcon {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Add proper spacing between paragraphs */
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Update header to accommodate multiple buttons */
+.headerButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.refreshButton {
+  background: none;
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.refreshButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.refreshButton svg {
+  transition: transform 0.3s ease;
+}
+
+.refreshButton:hover svg {
+  transform: rotate(180deg);
+}
