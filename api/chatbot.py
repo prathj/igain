@@ -98,7 +98,7 @@ class ChatBot:
         # try to first get a valid tracking number
         tracking_number = self.extract_tracking_number(user_input)
         if tracking_number:
-            response = (f"Great, tracking number {tracking_number} confirmed. Your package is currently in transit. "
+            response = (f"Great, tracking number {tracking_number} confirmed. Your package encountered some shipping delays but is now currently in transit. "
                         "Would you like real-time updates or assistance filing a support ticket?")
             self.current_state = "tracking_confirmed"
             self.conversation_history.append({"role": "assistant", "content": response})
@@ -150,7 +150,7 @@ class ChatBot:
             return self.state_greeting(user_input)
         elif branch == "valid_alternative":
             order_number = str(random.randint(1000000000, 9999999999))
-            response = (f"Great, tracking number {order_number} confirmed. Your package is in transit. "
+            response = (f"Great, tracking number {order_number} confirmed. Your package encountered some shipping delays but is now currently in transit. "
                         "Would you like real-time updates or assistance filing a support ticket?")
             self.current_state = "tracking_confirmed"
         elif branch == "invalid":
