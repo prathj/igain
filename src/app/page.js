@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     // fetch initial chatbot data from FastAPI backend
-    fetch('http://localhost:5328/api/chatbot-data')
+    fetch('/api/chatbot-data')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -47,7 +47,7 @@ export default function Home() {
     
     // send message to backend
     try {
-      const response = await fetch('http://localhost:5328/api/send-message', {
+      const response = await fetch('/api/send-message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export default function Home() {
   const handleRefreshChat = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5328/api/chatbot-data');
+      const response = await fetch('/api/chatbot-data');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
